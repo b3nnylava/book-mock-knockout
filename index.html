@@ -2,84 +2,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>🐎📚 - Horse Books</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>🐎📚 - Horse Books</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.common.css">
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.common.css">
 
-  <link rel="dx-theme" data-theme="generic.light.compact" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.light.compact.css"  data-active="false" />
-  <link rel="dx-theme" data-theme="generic.darkviolet.compact" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.darkviolet.compact.css" data-active="true" />
+    <link rel="dx-theme" data-theme="generic.light.compact" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.light.compact.css"  data-active="false" />
+    <link rel="dx-theme" data-theme="generic.darkviolet.compact" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.darkviolet.compact.css" data-active="true" />
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/18.1.6/js/dx.all.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/18.1.6/js/dx.all.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript" src="scripts.js"></script>
-  <script type="text/javascript" src="data.js"></script>
-  <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body style="background-color: #424548;">
-  <div class='container-fluid'>
-    <div class='row'>
-      <div class='col-sm-12'>
-        <br>
-        <div id='theme-toggle'></div>
-        &nbsp;
-        <div id='view-toggle'></div>
-        <br>
-        <br>
-        <div id='card-view'>
-            <div id="accordion">
-                <div data-bind="dxAccordion: accordionOptions">
-                    <div data-options="dxTemplate : { name: 'title' } ">
-                        <h1 data-bind="text: $data.title"></h1>
-                    </div>
-                    <div data-options="dxTemplate : { name: 'accordion-template' } ">
-                        <div class="accodion-item">
-                            <div>
-                                <p>
-                                    <b data-bind="text: $data.City"></b> 
-                                    (<span data-bind="text: $data.State"></span>)
-                                </p>
-                                <p>
-                                    <span data-bind="text: $data.Zipcode"></span> 
-                                    <span data-bind="text: $data.Address"></span>
-                                </p>
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <br>
+                <div id='theme-toggle'></div>
+                &nbsp;
+                <div id='view-toggle'></div>
+                <br>
+                <br>
+                <div id='card-view'>
+                    <div id="accordion">
+                        <div data-bind="dxAccordion: accordionOptions">
+                            <div data-options="dxTemplate : { name: 'title' } ">
+                                <h1 data-bind="text: $data.title"></h1>
                             </div>
-                            <div>
-                                <p>
-                                    Phone: <b data-bind="text: $data.Phone"></b>
-                                </p>
-                                <p>
-                                    Fax: <b data-bind="text: $data.Fax"></b>
-                                </p>
-                                <p>
-                                    Website: 
-                                    <a target="_blank" data-bind="
-                                        attr: { href: $data.Website }, 
-                                        text: $data.Website"
-                                    ></a>
-                                </p>
+                            <div data-options="dxTemplate : { name: 'accordion-template' } ">
+                                <div class='container-fluid'>
+                                    <div class='row h-100'>
+                                        <div class='col-lg-2 col-md-2 pb-lg-0 pb-2 text-center' id='picture-col'>
+                                            <div id="no-image">
+                                                <br>
+                                                <br>
+                                                NO IMAGE FOUND
+                                            </div>
+                                        </div>
+                                        <div class='col-lg-8 col-md-10 pb-lg-0 pb-2'>
+                                            <p data-bind="text: $data.notes"></p>
+                                        </div>
+                                        <div class='col-lg-2 col-md-12 d-flex pt-lg-0 pt-1 align-items-center text-center' id='store-col'>
+                                            <div class='text-center w-100'>
+                                                <a target='_blank' data-bind=" attr: { href: $data.storeURL }, text: $data.store"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id='grid-view'>
+                    grid
+                </div>
             </div>
         </div>
-        <div id='grid-view'>
-          grid
-        </div>
-      </div>
     </div>
-  </div>
 </body>
 </html>
