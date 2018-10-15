@@ -1,3 +1,79 @@
 #grid-view {
     display: none;
 }
+
+
+/* Card View CSS */
+#card-view h1 {
+    font-size: 35px;
+}
+
+#card-view h1,
+#card-view p {
+    margin: 0;
+}
+
+.dx-theme-material #card-view .dx-accordion-item-opened h1 {
+    margin-top: 7px;
+}
+
+.options,
+.selected-data {
+    padding: 20px;
+    background-color: rgba(191, 191, 191, 0.15);
+    margin-top: 20px;
+}
+
+.selected-data {
+    position: relative;
+    height: 36px;
+}
+
+.selected-data > .caption {
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 115%;
+}
+
+.selected-data > .dx-widget {
+    position: absolute;
+    left: 140px;
+    right: 20px;
+    top: 20px;
+}
+
+.options > .caption {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.option {
+    margin-top: 10px;
+}
+
+img {
+    width: 100px;
+    max-height: 155px
+}
+
+#no-image {
+    width: 100px;
+    height: 150px;
+    border-color: red;
+    border-style: solid;
+    text-align: center;
+}
+
+#store-col {
+    border-left: 1px solid grey;
+}
+
+
+@media (max-width: 991.5px) { 
+    #store-col {
+        border-left: none;
+        border-top: 1px solid grey;
+    }
+}

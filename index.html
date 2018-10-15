@@ -14,6 +14,7 @@
   <link rel="dx-theme" data-theme="generic.darkviolet.compact" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.darkviolet.compact.css" data-active="true" />
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
   <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/18.1.6/js/dx.all.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -37,7 +38,42 @@
         <br>
         <br>
         <div id='card-view'>
-          card
+            <div id="accordion">
+                <div data-bind="dxAccordion: accordionOptions">
+                    <div data-options="dxTemplate : { name: 'title' } ">
+                        <h1 data-bind="text: $data.title"></h1>
+                    </div>
+                    <div data-options="dxTemplate : { name: 'accordion-template' } ">
+                        <div class="accodion-item">
+                            <div>
+                                <p>
+                                    <b data-bind="text: $data.City"></b> 
+                                    (<span data-bind="text: $data.State"></span>)
+                                </p>
+                                <p>
+                                    <span data-bind="text: $data.Zipcode"></span> 
+                                    <span data-bind="text: $data.Address"></span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Phone: <b data-bind="text: $data.Phone"></b>
+                                </p>
+                                <p>
+                                    Fax: <b data-bind="text: $data.Fax"></b>
+                                </p>
+                                <p>
+                                    Website: 
+                                    <a target="_blank" data-bind="
+                                        attr: { href: $data.Website }, 
+                                        text: $data.Website"
+                                    ></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id='grid-view'>
           grid

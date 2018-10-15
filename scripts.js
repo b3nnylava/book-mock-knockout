@@ -30,4 +30,19 @@ $(document).ready(() => {
             }
         }
     });
+
+    var viewModel = function(){
+        var that = this;
+        
+        that.accordionOptions = {
+            dataSource: listings,
+            itemTemplate: "accordion-template",
+            animationDuration: 300,
+            collapsible: true,
+            multiple: true,
+            selectedItems: listings
+        };
+    };
+    
+    ko.applyBindings(new viewModel(), document.getElementById("accordion"));
 });
